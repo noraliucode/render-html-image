@@ -47,7 +47,17 @@
 
 .name {
   position: absolute;
-    top: 230px;
+    top: 180px;
+    color: black;
+    left: 50%;
+    right: tr;
+    transform: translateX(-50%);
+    font-size: 54px;
+}
+
+.number {
+  position: absolute;
+    top: 245px;
     color: black;
     left: 50%;
     right: tr;

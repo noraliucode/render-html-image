@@ -33,6 +33,7 @@ function App() {
 		<div className="App" id="container">
 			<div className="image-wrapper" id="my-node">
 				<div className="name">{name}</div>
+				<div className="number">{number}</div>
 			</div>
 			輸入會員姓名：
 			<input type="text" value={name} onChange={handleChange} />
