@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import domtoimage from 'dom-to-image';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [ name, setName ] = useState('');
+
+	const getImage = () => {
+		var node = document.getElementById('my-node');
+
+		domtoimage
+			.toPng(node)
+			.then(function(dataUrl) {
+				var img = new Image();
+				img.src = dataUrl;
+				document.getElementById('container').appendChild(img);
+			})
+			.catch(function(error) {
+				console.error('oops, something went wrong!', error);
+			});
+	};
+
+	const handleChange = (event) => {
+		setName(event.target.value);
+	};
+
+	return (
+		<div className="App" id="container">
+			<div className="image-wrapper" id="my-node">
+				<div className="name">{name}</div>
+			</div>
+			<button onClick={getImage}>Get Image!!</button>
+			<input type="text" value={name} onChange={handleChange} />
+		</div>
+	);
 }
 
 export default App;

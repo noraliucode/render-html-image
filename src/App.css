@@ -24,6 +24,15 @@
   color: white;
 }
 
+.image-wrapper {
+  width: 1067px;
+  height: 839px;
+  border: 1px solid red;
+  background: no-repeat center url("../public/bg.jpeg");
+  background-size: contain;
+  position: relative;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +44,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.name {
+  position: absolute;
+    top: 230px;
+    color: black;
+    left: 50%;
+    right: tr;
+    transform: translateX(-50%);
+    font-size: 36px;
 }
