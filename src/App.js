@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 function App() {
 	const [ name, setName ] = useState('');
+	const [ number, setNumber ] = useState('');
 
 	const getImage = () => {
 		var node = document.getElementById('my-node');
@@ -24,13 +25,20 @@ function App() {
 		setName(event.target.value);
 	};
 
+	const handleNumberChange = (event) => {
+		setNumber(event.target.value);
+	};
+
 	return (
 		<div className="App" id="container">
 			<div className="image-wrapper" id="my-node">
 				<div className="name">{name}</div>
 			</div>
-			<button onClick={getImage}>Get Image!!</button>
+			輸入會員姓名：
 			<input type="text" value={name} onChange={handleChange} />
+			輸入會員編號：
+			<input type="text" value={number} onChange={handleNumberChange} />
+			<button onClick={getImage}>產生會員證！！</button>
 		</div>
 	);
 }

@@ -25,9 +25,8 @@
 }
 
 .image-wrapper {
-  width: 1067px;
-  height: 839px;
-  border: 1px solid red;
+  width: 1000px;
+  height: 500px;
   background: no-repeat center url("../public/bg.jpeg");
   background-size: contain;
   position: relative;
