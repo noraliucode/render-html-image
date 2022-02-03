@@ -47,7 +47,7 @@ function App() {
 				<div className="name">{name}</div>
 				<div className="number">{number}</div>
 				<div className="img-holder">
-					<img style={{width: '200px', height: 'auto', position: 'absolute', top: '108px', left: '155px' }} src={profileImg} alt="" id="img" className="img" />
+					<img style={{width: '200px', height: 'auto', position: 'absolute', top: '127px', left: '155px' }} src={profileImg} alt="" id="img" className="img" />
 				</div>
 			</div>
 			
