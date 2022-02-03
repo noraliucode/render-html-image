@@ -5,6 +5,8 @@ import { useState } from 'react';
 function App() {
 	const [ name, setName ] = useState('');
 	const [ number, setNumber ] = useState('');
+	const [ profileImg, setProfileImg ] = useState('');
+	
 
 	const getImage = () => {
 		var node = document.getElementById('my-node');
@@ -29,12 +31,28 @@ function App() {
 		setNumber(event.target.value);
 	};
 
+	const imageHandler = (e) => {
+		const reader = new FileReader();
+		reader.onload = () =>{
+		  if(reader.readyState === 2){
+			setProfileImg(reader.result)
+		  }
+		}
+		reader.readAsDataURL(e.target.files[0])
+	  };
+
 	return (
 		<div className="App" id="container">
 			<div className="image-wrapper" id="my-node">
 				<div className="name">{name}</div>
 				<div className="number">{number}</div>
+				<div className="img-holder">
+					<img style={{width: '200px', height: 'auto', position: 'absolute', top: '108px', left: '155px' }} src={profileImg} alt="" id="img" className="img" />
+				</div>
 			</div>
+			
+			<input type="file" accept="image/*" name="image-upload" id="input" onChange={imageHandler} />
+
 			輸入會員姓名：
 			<input type="text" value={name} onChange={handleChange} />
 			輸入會員編號：
